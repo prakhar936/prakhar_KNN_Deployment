@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="battery_power" placeholder="BATTERY POWER" required="required" />
+        <input type="text" name="px_height" placeholder="PX HEIGHT" required="required" />
+		<input type="text" name="px_width" placeholder="PX WIDTH" required="required" />
+        <input type="text" name="ram" placeholder="RAM" required="required">
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    {{ prediction_text }}
+
+</body>
+</html>

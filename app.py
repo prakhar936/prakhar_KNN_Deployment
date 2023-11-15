@@ -12,8 +12,8 @@ def home():
 
 @app.route('/predict', methods = ['POST'])
 def predict():
-    float_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(float_features)]
+    int_features = [int(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
     output = round(prediction[0],2)
@@ -31,4 +31,4 @@ def predict_api():
     return jsonify(output)
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(debug = True, port=5600)
